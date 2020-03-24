@@ -42,7 +42,8 @@ class Student
     binding.pry
     ats.each do |student|
       stdnt = Student.new(student.name, student.grade)
-    student.save
+      stdnt.save
+    end
   end
 
 end
