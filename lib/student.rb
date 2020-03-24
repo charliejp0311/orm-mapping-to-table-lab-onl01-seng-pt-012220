@@ -34,12 +34,7 @@ class Student
       VALUES (?, ?);
     SQL
     DB[:conn].execute(sql, self.name, self.grade)
-    q = <<-SQL
-      SELECT id
-      FROM students
-      WHERE name = (?);
-    SQL
-    @id = DB[:conn].execute(q, self.name)
+    @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
     # binding.pry
   end
 
