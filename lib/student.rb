@@ -35,7 +35,7 @@ class Student
     SQL
     DB[:conn].execute(sql, self.name, self.grade)
     id_querry = <<-SQL SELECT id FROM students WHERE name = (?);SQL
-    ans = DB[:conn].execute(id_querry, self.name)
+    @id = DB[:conn].execute(id_querry, self.name)
     # binding.pry
   end
 
