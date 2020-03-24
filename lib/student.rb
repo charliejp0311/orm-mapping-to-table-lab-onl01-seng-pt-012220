@@ -39,7 +39,6 @@ class Student
   end
 
   def self.create(ats)
-    binding.pry
     ats.each do |student|
       stdnt = Student.new(student.name, student.grade)
       stdnt.save
